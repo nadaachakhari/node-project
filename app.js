@@ -4,6 +4,8 @@ const mongoose = require("mongoose")
 const taskRoutes = require("./routers/task")
 const bookRoutes = require("./routers/book")
 const userRoutes = require("./routers/user")
+const authorRoutes = require("./routers/author")
+const eventRoutes = require("./routers/eventRoutes")
 
 mongoose
     .connect("mongodb+srv://nadachakhari00:jk6sjUyH0jL770eG@cluster0.jamxd1i.mongodb.net/Test",
@@ -32,6 +34,8 @@ app.use(express.json())
 app.use("/api/tasks", taskRoutes)
 app.use("/api/books", bookRoutes)
 app.use("/api/auth", userRoutes)
+app.use("/api/author", authorRoutes)
+app.use("/api/event", eventRoutes)
 
 
 
@@ -78,14 +82,4 @@ app.use("/api/auth", userRoutes)
 //     res.send(req.body)
 // })
 
-
-
-//get by id 
-
-
-
-
-
 module.exports = app
-
-//erreur CORS !! 

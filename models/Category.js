@@ -1,8 +1,14 @@
-const mongoose = require("mongoose")
-const CategorySchema = mongoose.Schema({
-    title: String,
-    enum: ["Horror", "Mystery", "Science Fiction", "Fantasy", "Romance", "Non-Fiction"],
-    required: true,
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const categorySchema = mongoose.Schema({
+  name: {
+      type: String,
+      enum: ['Horror', 'Mystery', 'Fiction', 'Science Fiction', 'Romance', 'Fantasy', 'Non-fiction', 
+      'Thriller', 'Biography', 'Adventure', 'Drama'],
+      required: true
+  }
 })
 
-module.exports = mongoose.model("Category", CategorySchema)
+const Category = mongoose.model('Category', categorySchema)
+module.exports = Category
